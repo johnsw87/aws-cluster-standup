@@ -121,7 +121,7 @@ for cluster in "${clusters[@]}"; do
 done
 
 info Waiting for clusters to come up
-anthos-gke login "${clusters[0]}" >/dev/null 2>&1
+anthos-gke login gke "${clusters[0]}" >/dev/null 2>&1
 for i in {1..15}; do
     if kubectl get ns >/dev/null 2>&1; then
         break
@@ -131,7 +131,7 @@ done
 
 for cluster in "${clusters[@]}"; do
     info Logging in to cluster
-    _anthos-gke login "$cluster"
+    _anthos-gke login gke "$cluster"
     info Applying admin config
     _kubectl create serviceaccount -n kube-system admin-user
     _kubectl create clusterrolebinding admin-user-binding --clusterrole cluster-admin --serviceaccount kube-system:admin-user
