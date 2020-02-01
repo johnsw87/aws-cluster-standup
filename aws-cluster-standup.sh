@@ -10,9 +10,8 @@
 # - anthos-gke (you can get this from here: gs://gke-multi-cloud-release/bin/aws-0.1.0-gke.8/anthos-for-gke.tgz)
 
 # - define project name var
-GCP Project Name
 if [ -z "$PROJECT" ]; then
-    echo Please enther the GCP Project ID:
+    echo Please enther the GCP Project Name:
     read PROJECT
 fi
 
