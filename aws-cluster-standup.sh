@@ -9,6 +9,13 @@
 # - aws CLI (to generate ~/.aws/credentials)
 # - anthos-gke (you can get this from here: gs://gke-multi-cloud-release/bin/aws-0.1.0-gke.8/anthos-for-gke.tgz)
 
+# - define project name var
+GCP Project Name
+if [ -z "$PROJECT" ]; then
+    echo Please enther the GCP Project ID:
+    read PROJECT
+fi
+
 # Service account name (can ignore if you supply `anthos-gke-gcr.json`)
 # This must be whitelisted here: https://docs.google.com/forms/d/e/1FAIpQLSfEUuzy_RHaArKi1nE9gWUJlqanWLFzpTJDlsiTi0fnUmewrw/viewform
 if [ -z "$service_account" ]; then
