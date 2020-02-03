@@ -38,13 +38,13 @@ echo copy and paste this to git.
 
 kubectl create secret generic git-creds --namespace=config-management-system --from-file=ssh="$git_keypair_private"
 
-# - define filename got git keys, created local to this script.
+# - input gke-cluster name
 if [ -z "$gke_cluster_name" ]; then
     echo 'Please enter your gke cluster name':
     read gke_cluster_name
 fi
 
-# - define filename got git keys, created local to this script.
+# - input git repo name
 if [ -z "$git_repo" ]; then
     echo 'Please enter your git repo name that will be monitored.':
     read git_repo
